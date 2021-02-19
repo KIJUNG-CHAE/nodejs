@@ -1,3 +1,3 @@
 # nodejs
-fastcampus nodejs lec 
-let's go nodejs party~~
+#fastcampus nodejs lec 
+#let's go nodejs party~~
