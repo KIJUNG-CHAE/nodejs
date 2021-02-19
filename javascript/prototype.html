@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+function car(a,b){
+    this.name = a;
+    this.color = b;
+}
+car.prototype.move = function(){
+    console.log(this.name+"차이고 "+this.color+"색입니다.")
+}
+var a = new car("hundai","white");
+a.move()
+var b = new car("kia","blue");
+b.move()
+
+</script>
+</body>
+</html>

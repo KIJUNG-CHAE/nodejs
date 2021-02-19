@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+var a = {
+    'a' :110,
+    'b' : 'hello',
+    'c' : function(){
+        console.log('gggg')
+    },
+    'd' : function(){
+        console.log(this.a++)
+    }
+}
+
+Object.prototype.sum = function(){
+    console.log(this.a + 20);
+}
+
+console.log(a.a)
+a.c()
+a.sum()
+a.d()
+a.d()
+console.log(a.a)
+
+</script>
+</body>
+</html>

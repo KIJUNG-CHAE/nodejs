@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+// const
+const a = 10;
+//a = 5; <<< error
+
+// let
+let b = 1;
+if( true ){
+    let b = 2;
+    console.log(b);
+}
+console.log(b);
+
+// templete variable
+var arr = 'hello'
+console.log("a is " + arr);
+console.log(`a is ${arr}`);
+
+// arrow function express
+var var_plus = (a,b) => a+b;
+console.log(var_plus(a,b));
+
+// spread operation
+const [d,e,f] = [4,5,6];
+console.log(e);
+
+var arr1 = [1,2];
+var arr2 = [3,4,5];
+var arr3 = [...arr1, ...arr2]
+console.log(arr3);
+
+function abc(a,...b){
+    console.log(b[0]); // characteristics of the argument 
+}
+abc('nodejs','hello','bye')
+
+</script>
+</body>
+</html>
