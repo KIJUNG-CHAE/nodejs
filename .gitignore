@@ -1,0 +1,4 @@
+## docx, module file, .env file ##
+
+*.docx
+*.env
