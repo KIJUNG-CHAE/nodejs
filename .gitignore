@@ -2,4 +2,4 @@
 
 *.docx
 *.env
-/sequelize/node_modules/
+/nodejsEx/sequelize/node_modules/
