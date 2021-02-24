@@ -21,7 +21,7 @@ process.env.DB_USER, process.env.DB_PASSWORD,{
 
 //데이터베이스 접근 완료
 
-//sink
+//sync 처리
 let db = [];
 
 fs.readdirSync(__dirname)
