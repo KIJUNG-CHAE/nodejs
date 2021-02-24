@@ -1,10 +1,18 @@
 const models = require('../../models');
 
 exports.get_products = ( _ , res) => {
-    res.render( 'admin/products.html' , 
-        { message : "hello" } // message 란 변수를 템플릿으로 내보낸다.
-    );
-}
+    // res.render( 'admin/products.html' , 
+    //     { message : "hello" } // message 란 변수를 템플릿으로 내보낸다.
+    // );
+    models.Products.findAll({
+
+    }).then( (products) => {
+        res.render('admin/products.html', { products })
+    }); // html로 뿌려줌 
+        // javascript에서 key값과 value값이 일치하면 하나만 적어도 됨 >> products
+
+}// findAll뒤에 들어갈 조건들 (where절, 어떤단어가 포함된 경우, 관리자인 경우, 제품등록시간 등등)
+ // 현재는 없으므로 비워둠
 
 exports.get_products_write = ( _ , res) => {
     res.render( 'admin/write.html');
