@@ -32,7 +32,7 @@ fs.readdirSync(__dirname)
         var model = sequelize.import(path.join(__dirname,
             file));
             db[model.name] = model;
-    }); //index.js를 제외하고 각각의 테이블들을 생성해줌.
+    }); //index.js를 제외하고 각각의 모델에 대한 데이터베이스 테이블들을 생성해줌.
 
 Object.keys(db).forEach(modelName => {
     if("associate" in db[modelName]){
