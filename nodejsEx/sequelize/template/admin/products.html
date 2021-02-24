@@ -11,7 +11,12 @@
         {# models의 products를 받아서 nunjucks의 for문을 이용해서 뿌리기 #}
         {% for product in products %}
         <tr>
-            <td>{{product.name}}</td>
+            <td>
+                {# get요청 #}
+                <a href="/admin/products/detail/{{ product.id }}">
+                    {{product.name}}
+                </a>
+            </td>
             <td>
                 {{product.createdAt}}
             </td>

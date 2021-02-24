@@ -101,6 +101,7 @@ class App {
 
         this.app.use( (err, req, res,  _ ) => {
             res.status(500).render('common/500.html')
+            res.render(console.log(err));
         });
     
     }

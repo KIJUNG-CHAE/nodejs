@@ -21,7 +21,15 @@ exports.get_products_write = ( _ , res) => {
 exports.post_products_write = ( req , res ) => {
     // res.send(req.body); 
     models.Products.create(req.body).then( () => {
-        res.redirect('/admin/Products')
+        res.redirect('/admin/products');
     });
 }// body-Parser를 통해 keyfield값을 맞춰서 Products들을 생성, 
 // 정보를 받고 다시 메인 페이지로 돌아가기 위해 콜백함수로 then을 쓰고 redirect를 해줌
+
+exports.get_products_detail = ( req , res ) => {
+    models.Products.findByPk(req.params.id).then( (product) => {
+        res.render('admin/detail.html', { product });  
+    });
+}     
+//하나만 찾아서 admin/detail페이지에서 상세하게 나타냄
+//req.params.id 변수를 파라미터의 id로 받을 수 있음
