@@ -31,5 +31,5 @@ exports.get_products_detail = ( req , res ) => {
         res.render('admin/detail.html', { product });  
     });
 }     
-//하나만 찾아서 admin/detail페이지에서 상세하게 나타냄
-//req.params.id 변수를 파라미터의 id로 받을 수 있음
+// 하나만 찾아서 admin/detail페이지에서 상세하게 나타냄
+// url이 변하는 변수를 id로 정했음 <<이거를 req.params.id 쓰면 받을 id값을 받을 수 있다
