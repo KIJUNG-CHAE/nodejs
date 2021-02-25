@@ -42,7 +42,7 @@ exports.get_products_edit = (req, res) => {
 // 기존의 write.html를 재탕함 << action을 비워두었던 점 
 // 다른점은 내용이 채워지도록 변수를 사용할 수 있게 함.
 
-exports.post_products_edit =(req, res) => {
+exports.post_products_edit = (req, res) => {
     models.Products.update({
         name : req.body.name,
         price : req.body.price,
@@ -54,3 +54,15 @@ exports.post_products_edit =(req, res) => {
     });
 } // update에 필요한 매개변수 : data와 조건(id)where절
   // 데이터베이스 업데이트 >> 상세페이지로 redirection
+
+exports.get_products_delete = (req, res) => {
+    models.Products.destroy({
+        where : {
+            id : req.params.id
+        }
+    }).then(() => {
+        res.redirect('/admin/products');
+    });
+}
+// sequelize의 destroy메소드로 sql의 delete처리 
+// product목록으로 redirect
