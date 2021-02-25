@@ -33,3 +33,24 @@ exports.get_products_detail = ( req , res ) => {
 }     
 // 하나만 찾아서 admin/detail페이지에서 상세하게 나타냄
 // url이 변하는 변수를 id로 정했음 <<이거를 req.params.id 쓰면 받을 id값을 받을 수 있다
+
+exports.get_products_edit = (req, res) => {
+    models.Products.findByPk(req.params.id).then((product)=>{
+        res.render('admin/write.html', { product });
+    });
+}
+// 기존의 write.html를 재탕함 << action을 비워두었던 점 
+// 다른점은 내용이 채워지도록 변수를 사용할 수 있게 함.
+
+exports.post_products_edit =(req, res) => {
+    models.Products.update({
+        name : req.body.name,
+        price : req.body.price,
+        description : req.body.description
+    }, {
+        where : { id : req.params.id }
+    }).then(() => {
+        res.redirect('/admin/products/detail/' + req.params.id );
+    });
+} // update에 필요한 매개변수 : data와 조건(id)where절
+  // 데이터베이스 업데이트 >> 상세페이지로 redirection
