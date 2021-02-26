@@ -1,0 +1,32 @@
+{% set title = "관리자 리스트" %}
+{% extends "layout/base.html" %}
+ 
+{% block content -%}
+    <table class="table table-bordered table-hover">
+        <tr>
+            <th>책제목</th>
+            <th>저서</th>
+            <th>삭제</th>
+        </tr>
+        {% for book in booklist %}
+        <tr>
+            <td>
+                {# get요청 #}
+                <a href="/admin/products/detail/{{ book.id }}">
+                    {{book.title}}
+                </a>
+            </td>
+            <td>
+                {{book.author}}
+            </td>
+            <td>
+                <a href="/admin/books/delete/{{book.id}}" 
+                class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="" class="btn btn-default">작성하기</a>
+
+{% endblock %}

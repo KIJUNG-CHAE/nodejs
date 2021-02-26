@@ -14,6 +14,15 @@ exports.get_products = ( _ , res) => {
 }// findAll뒤에 들어갈 조건들 (where절, 어떤단어가 포함된 경우, 관리자인 경우, 제품등록시간 등등)
  // 현재는 없으므로 비워둠
 
+ //booklist
+exports.get_booklist = (req, res) => {
+    models.Booklist.findAll({
+
+    }).then((booklist) => {
+        res.render('admin/booklist.html', {booklist})
+    })
+}
+
 exports.get_products_write = ( _ , res) => {
     res.render( 'admin/write.html');
 }
