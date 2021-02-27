@@ -82,6 +82,25 @@ exports.post_products_edit = (req, res) => {
 } // update에 필요한 매개변수 : data와 조건(id)where절
   // 데이터베이스 업데이트 >> 상세페이지로 redirection
 
+
+exports.get_booklist_edit = (req, res) => {
+    models.Booklist.findByPk(req.params.id).then((book) =>{
+        res.render('admin/write_book.html',{ book });
+    });
+}
+
+exports.post_booklist_edit = (req, res) => {
+    models.Booklist.update({
+        title : req.body.title,
+        author : req.body.author,
+        description : req.body.description
+    }, {
+        where : { id: req.params.id }
+    }).then(() => {
+       res.redirect('/admin/booklist/detail/' + req.params.id );  
+    });
+}
+
 exports.get_products_delete = (req, res) => {
     models.Products.destroy({
         where : {
@@ -93,3 +112,11 @@ exports.get_products_delete = (req, res) => {
 }
 // sequelize의 destroy메소드로 sql의 delete처리 
 // product목록으로 redirect
+
+exports.get_booklist_delete = (req, res) => {
+    models.Booklist.destroy({
+        where : { id : req.params.id }
+    }).then(() => {
+        res.redirect('/admin/booklist');
+    });
+}

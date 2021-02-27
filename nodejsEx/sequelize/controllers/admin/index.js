@@ -25,4 +25,10 @@ router.post('/booklist/write', ctrl.post_booklist_write );
 
 router.get('/booklist/detail/:id', ctrl.get_booklist_detail );
 
+router.get('/booklist/edit/:id', ctrl.get_booklist_edit );
+
+router.post('/booklist/edit/:id', ctrl.post_booklist_edit );
+
+router.get('/booklist/delete/:id', ctrl.get_booklist_delete );
+
 module.exports = router;
