@@ -12,7 +12,8 @@
         <tr>
             <td>
                 {# get요청 #}
-                <a href="/admin/products/detail/{{ book.id }}">
+                {# <a href="/admin/products/detail/{{ book.id }}"> #}
+                <a href="">
                     {{book.title}}
                 </a>
             </td>
@@ -20,13 +21,14 @@
                 {{book.author}}
             </td>
             <td>
-                <a href="/admin/books/delete/{{book.id}}" 
-                class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a>
+                {# <a href="/admin/books/delete/{{book.id}}" 
+                class="btn btn-danger" onclick="return confirm('삭제하시겠습니까?')">삭제</a> #}
+                <a href="" class="btn btn-danger">삭제</a>
             </td>
         </tr>
         {% endfor %}
     </table>
 
-    <a href="" class="btn btn-default">작성하기</a>
+    <a href="/admin/booklist/write" class="btn btn-default">작성하기</a>
 
 {% endblock %}

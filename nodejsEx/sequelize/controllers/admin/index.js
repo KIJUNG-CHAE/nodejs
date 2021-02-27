@@ -19,4 +19,8 @@ router.get('/products/delete/:id', ctrl.get_products_delete );
 //Booklist
 router.get('/booklist', ctrl.get_booklist);
 
+router.get('/booklist/write', ctrl.get_booklist_write );
+
+router.post('/booklist/write', ctrl.post_booklist_write );
+
 module.exports = router;

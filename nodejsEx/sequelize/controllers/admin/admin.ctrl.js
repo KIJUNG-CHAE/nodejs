@@ -1,3 +1,4 @@
+const { rawListeners } = require('../../app');
 const models = require('../../models');
 
 exports.get_products = ( _ , res) => {
@@ -19,7 +20,7 @@ exports.get_booklist = (req, res) => {
     models.Booklist.findAll({
 
     }).then((booklist) => {
-        res.render('admin/booklist.html', {booklist})
+        res.render('admin/booklist.html', { booklist })
     })
 }
 
@@ -34,6 +35,17 @@ exports.post_products_write = ( req , res ) => {
     });
 }// body-Parser를 통해 keyfield값을 맞춰서 Products들을 생성, 
 // 정보를 받고 다시 메인 페이지로 돌아가기 위해 콜백함수로 then을 쓰고 redirect를 해줌
+
+exports.get_booklist_write = (req, res) => {
+    res.render('admin/write_book.html');
+}
+
+exports.post_booklist_write = (req, res) => {
+    models.Booklist.create(req.body).then(() =>{
+        res.redirect('/admin/booklist');
+    });
+}
+
 
 exports.get_products_detail = ( req , res ) => {
     models.Products.findByPk(req.params.id).then( (product) => {
