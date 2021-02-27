@@ -55,6 +55,12 @@ exports.get_products_detail = ( req , res ) => {
 // 하나만 찾아서 admin/detail페이지에서 상세하게 나타냄
 // url이 변하는 변수를 id로 정했음 <<이거를 req.params.id 쓰면 받을 id값을 받을 수 있다
 
+exports.get_booklist_detail = (req, res) => {
+    models.Booklist.findByPk(req.params.id).then((book) => {
+        res.render('admin/detail_book.html',{ book });
+    })
+}
+
 exports.get_products_edit = (req, res) => {
     models.Products.findByPk(req.params.id).then((product)=>{
         res.render('admin/write.html', { product });

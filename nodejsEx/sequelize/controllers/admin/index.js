@@ -23,4 +23,6 @@ router.get('/booklist/write', ctrl.get_booklist_write );
 
 router.post('/booklist/write', ctrl.post_booklist_write );
 
+router.get('/booklist/detail/:id', ctrl.get_booklist_detail );
+
 module.exports = router;
