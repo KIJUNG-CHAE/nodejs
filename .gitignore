@@ -2,4 +2,6 @@
 
 *.docx
 *.env
+*.tmp
+
 /nodejsEx/sequelize/node_modules/
