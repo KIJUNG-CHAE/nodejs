@@ -5,3 +5,4 @@
 *.tmp
 
 /nodejsEx/sequelize/node_modules/
+/nodejsEx/crawling/node_modules/
